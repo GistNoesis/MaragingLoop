@@ -15,6 +15,7 @@ Unlike text-only coding agents, MaragingLoop treats **code generation** and **VM
 ---
 
 ### 👤 Quick Note from the human author (Read or Skip this as you like)
+Highly Experimental !!!
 You can see some images here -> https://gistnoesis.github.io/MaragingLoop/ and in the docs folder 
 
 This project is LOCAL first, -> performance lags behind frontier models, and NO Consideration for CREDENTIALS were tested (DISCLAIMER : Use at your own risk for example if you put credentials in and they get leak, that's not my responsibilty).
@@ -37,7 +38,7 @@ You'll need to use virtualbox and create a virtual machine called "agentos" and 
 The installation scripts are only necessary if you want more isolation of the LLM through Access Control List, the scripts were also vibecoded from the permission.md files I (the human) write. I have tested them and they worked (aka with the permissions set by the script the agent tools where functional, including the VM could create sreenshots, inspect_screenshots, send keyboard commands, ...) on my machine but in this process I had to regenerate them a lot of times so read permissions.md and use at your own risk, they were designed to use from the directory where they sit without having to specify arguments. I have put them in the repo for easier onboarding, but because permissions are highly dependent on your current setup they are for advanced users only and to help your trusted LLM agents to write a working script for your specific machine.
 
 What doesn't work yet : 
-I couldn't get the mouse pointer to work, nor write a correct network driver detect some network packet coming from the host while vibecoding even using reference PCFastIII driver from linux (looks like it would almost work, but that was at the beginning of the development phase). 
+I couldn't get the mouse pointer to work, nor write a correct network driver detect some network packet coming from the host configured as NAT with port forwarding while vibecoding even using reference PCFastIII driver from linux (looks like it would almost work, but that was at the beginning of the development phase). (The network stack need extra-tools for builderagent.py)
 
 The project is a boiler plate,  you can easily add your own tools by asking your local llama. Give it the single builderagent.py and describe the new tool you want, then either copy paste in place, or regenerate the full content. 
 
