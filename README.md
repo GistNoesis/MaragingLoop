@@ -17,6 +17,8 @@ Unlike text-only coding agents, MaragingLoop treats **code generation** and **VM
 ### 👤 Quick Note from the human author (Read or Skip this as you like)
 You can see some images here -> https://gistnoesis.github.io/MaragingLoop/ and in the docs folder 
 
+This project is LOCAL first, -> performance lags behind frontier models, and NO Consideration for CREDENTIALS were tested (DISCLAIMER : Use at your own risk for example if you put credentials in and they get leak, that's not my responsibilty).
+
 Everything was created Locally through prompting. I've constructed them through interacting with the llama webui. And the kernels, either via the chat interface or via a single initial prompt starting from a current os folder state, (higher towers in full autonomy like in the shoggoth.db project have not been included here to keep the project minimal)
 
 The single builderagent.py has been kept below 1000 lines (currently ~900 lines), you should read it make sure it correspond to what you want to run (like editing the system_prompt and summary_prompt, and compaction threshold). 
