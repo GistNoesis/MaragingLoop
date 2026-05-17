@@ -15,6 +15,7 @@ Unlike text-only coding agents, MaragingLoop treats **code generation** and **VM
 ---
 
 ### 👤 Quick Note from the human author (Read or Skip this as you like)
+You can see some images here -> https://gistnoesis.github.io/MaragingLoop/ and in the docs folder 
 
 Everything was created Locally through prompting. I've constructed them through interacting with the llama webui. And the kernels, either via the chat interface or via a single initial prompt starting from a current os folder state, (higher towers in full autonomy like in the shoggoth.db project have not been included here to keep the project minimal)
 
@@ -36,7 +37,7 @@ The project is a boiler plate,  you can easily add your own tools by asking your
 I have used virtual-box but you can ask your local llama to generate a qemu version instead. In particular with virtual-box the mouse-pointer seems to require some guest-additions, (currently couldn't get the mouse doesn't work for baremetal os).
 
 For examples you can try adding a copy_file_from_reference or adding a sqlite database memory like is done in my other project : 
-[https://github.com/GistNoesis/Shoggoth.db/]https://github.com/GistNoesis/Shoggoth.db/
+https://github.com/GistNoesis/Shoggoth.db/
 
 I have tried to respect good engineering practice but I'm only human. It was designed with Security in mind. This is a harness with strong constraints, contrary to the other agents who abandonned all control hope to the whims of the LLM (what we used to call polymorphic malware) . Here you are still in control. LLM can't run arbitrary command, except inside the virtualbox. On your host permissions are severely restricted to writing to specific folder .c or .h files, and calling specific commands. But information on any files on your host can be trivially read by the LLM with simple tricks. I've also proposed a solution using Access Control Lists.
 
