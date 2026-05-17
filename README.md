@@ -36,6 +36,9 @@ You'll need to use virtualbox and create a virtual machine called "agentos" and 
 
 The installation scripts are only necessary if you want more isolation of the LLM through Access Control List, the scripts were also vibecoded from the permission.md files I (the human) write. I have tested them and they worked (aka with the permissions set by the script the agent tools where functional, including the VM could create sreenshots, inspect_screenshots, send keyboard commands, ...) on my machine but in this process I had to regenerate them a lot of times so read permissions.md and use at your own risk, they were designed to use from the directory where they sit without having to specify arguments. I have put them in the repo for easier onboarding, but because permissions are highly dependent on your current setup they are for advanced users only and to help your trusted LLM agents to write a working script for your specific machine.
 
+What doesn't work yet : 
+I couldn't get the mouse pointer to work, nor write a correct network driver detect some network packet coming from the host while vibecoding even using reference PCFastIII driver from linux (looks like it would almost work, but that was at the beginning of the development phase). 
+
 The project is a boiler plate,  you can easily add your own tools by asking your local llama. Give it the single builderagent.py and describe the new tool you want, then either copy paste in place, or regenerate the full content. 
 
 I have used virtual-box but you can ask your local llama to generate a qemu version instead. In particular with virtual-box the mouse-pointer seems to require some guest-additions, (currently couldn't get the mouse doesn't work for baremetal os).
