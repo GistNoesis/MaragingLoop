@@ -16,6 +16,7 @@ Unlike text-only coding agents, MaragingLoop treats **code generation** and **VM
 
 ### 👤 Quick Note from the human author (Read or Skip this as you like)
 Highly Experimental !!!
+
 You can see some images here -> https://gistnoesis.github.io/MaragingLoop/ and in the docs folder 
 
 This project is LOCAL first, -> performance lags behind frontier models, and NO Consideration for CREDENTIALS were tested (DISCLAIMER : Use at your own risk for example if you put credentials in and they get leak, that's not my responsibilty).
