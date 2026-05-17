@@ -67,9 +67,9 @@ source .venv/bin/activate          # Linux/macOS
 pip install requests
 ```
 
-Update the server endpoint in `builderagent.py` if needed:
+Update the server endpoint in `builderagent.py` or use .env file (with no spaces) if needed:
 ```python
-BASE_URL = "http://localhost:8080/v1/chat/completions"  # Default llama.cpp
+COMPLETION_API_URL="http://localhost:8080/v1/chat/completions"  # Default llama.cpp
 ```
 
 ---
@@ -86,7 +86,7 @@ python builderagent.py chat
 **Environment Variables (Optional):**
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `BASE_URL` | `http://megabeast:8080/v1/chat/completions` | LLM server endpoint |
+| `COMPLETION_API_URL` | `http://megabeast:8080/v1/chat/completions` | LLM server endpoint |
 | `VM_NAME` | `agentos` | VirtualBox VM name to control |
 | `MAX_ITERATIONS` | `3000` | Safety limit for the ReAct loop |
 
