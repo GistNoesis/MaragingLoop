@@ -43,6 +43,8 @@ I have used virtual-box but you can ask your local llama to generate a qemu vers
 For examples you can try adding a copy_file_from_reference or adding a sqlite database memory like is done in my other project : 
 https://github.com/GistNoesis/Shoggoth.db/
 
+This agent control loop with vision like when it plays snake, is quite similar to my other project (Not yet on github) about driving a Robot with a LLM to get towards an object (Works but it is too slow for real-time robotics natively but can be used to generate some initial dataset to train specific neural networks.
+
 I have tried to respect good engineering practice but I'm only human. It was designed with Security in mind. This is a harness with strong constraints, contrary to the other agents who abandonned all control hope to the whims of the LLM (what we used to call polymorphic malware) . Here you are still in control. LLM can't run arbitrary command, except inside the virtualbox. On your host permissions are severely restricted to writing to specific folder .c or .h files, and calling specific commands. But information on any files on your host can be trivially read by the LLM with simple tricks. I've also proposed a solution using Access Control Lists.
 
 Like in the Shoggoth.db project, the main idea is setting up the foundation of a self-building tower. Make sure the keep control of the foundation, and push the safety problem to the big binary blob that are the model weights but they are generated deterministically from a dataset, which is also self-distilled from interaction with a VM, and known wiki.
