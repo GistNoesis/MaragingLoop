@@ -132,7 +132,7 @@ python builderagent.py chat
 **Environment Variables (Optional):**
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `COMPLETION_API_URL` | `http://megabeast:8080/v1/chat/completions` | LLM server endpoint |
+| `COMPLETION_API_URL` | `http://localhost:8080/v1/chat/completions` | LLM server endpoint |
 | `VM_NAME` | `agentos` | VirtualBox VM name to control |
 | `MAX_ITERATIONS` | `3000` | Safety limit for the ReAct loop |
 
