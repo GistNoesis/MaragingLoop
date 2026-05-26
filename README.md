@@ -28,9 +28,11 @@ The single builderagent.py has been kept below 1000 lines (currently ~900 lines)
 The model used is unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-IQ4_NL_XL.gguf with llama.cpp
 
 ```
-./llama-server --model unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-IQ4_NL_XL.gguf --mmproj unsloth/Qwen3.6-35B-A3B-GGUF/mmproj-BF16.gguf --image-min-tokens 1024 --image-max-tokens 1024 --temp 1.0 --top-p 0.95 --min-p 0.00 --jinja --top-k 20 --ctx-size 150000 --reasoning_budget 3000 --presence_penalty 1.5 -ctk f16 -ctv f16 --host 0.0.0.0 --port 8080 --no-mmap  --chat-template-kwargs '{"preserve_thinking":true}'
+./llama-server --model unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-IQ4_NL_XL.gguf --mmproj unsloth/Qwen3.6-35B-A3B-GGUF/mmproj-BF16.gguf --image-min-tokens 1024 --image-max-tokens 1024 --temp 0.6 --top-p 0.95 --min-p 0.00 --jinja --top-k 20 --ctx-size 150000 --reasoning_budget 3000 --presence_penalty 0 -ctk f16 -ctv f16 --host 0.0.0.0 --port 8080 --no-mmap  --chat-template-kwargs '{"preserve_thinking":true}'
 ```
 The options are not very rigid, but keeping a small reasoning_budget help. the host 0.0.0.0 is because the LLM is on an other machine of the network (it allows anyone who can connect to your machine to use your llama server so set this option according to your needs), the ctx-size is kept small for speed and memory issues. If you need up to 250000 ctx-size you should offload the vision stack to the cpu, or you will encounter out of memory crashes. The image number of tokens can be adapted to trade speed for quality.
+
+See https://unsloth.ai/docs/models/qwen3.6 to configure more finely the settings. (I updated the temperature and presence penalty from my early runs in the above command to follow this recommandation for precise coding instead of general)
 
 With a 4090 this produces ~150 tokens/s (starting at 180tok/s and slowing down to 110tok/s )
 
